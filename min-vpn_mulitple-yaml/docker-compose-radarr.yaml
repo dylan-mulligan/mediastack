@@ -15,7 +15,8 @@ services:
     restart: unless-stopped
     volumes:
       - ${FOLDER_FOR_DATA:?err}/radarr:/config
-      - ${FOLDER_FOR_MEDIA:?err}:/data
+      - ${FOLDER_FOR_MOVIES:?err}:/data
+      # Movies library is mapped to F:\Movies via FOLDER_FOR_MOVIES
     ports:
       - "${WEBUI_PORT_RADARR:?err}:7878"
     environment:

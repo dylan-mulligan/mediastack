@@ -15,7 +15,8 @@ services:
     restart: unless-stopped
     volumes:
       - ${FOLDER_FOR_DATA:?err}/sonarr:/config
-      - ${FOLDER_FOR_MEDIA:?err}:/data
+      - ${FOLDER_FOR_SHOWS:?err}:/data
+      # TV Shows library is mapped to E:\Shows via FOLDER_FOR_SHOWS
     ports:
       - "${WEBUI_PORT_SONARR:?err}:8989"
     environment:
